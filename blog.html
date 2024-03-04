@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #2c3e50; /* Darker shade, adjust as needed */
+            color: #ecf0f1; /* Text color for better readability */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #34495e; /* Darker shade, adjust as needed */
+            color: #ecf0f1; /* Text color for better readability */
+            width: 80%; /* Adjust the width as needed */
+        }
+
+        section {
+            text-align: left;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #34495e; /* Darker shade, adjust as needed */
+            color: #ecf0f1; /* Text color for better readability */
+            width: 80%; /* Adjust the width as needed */
+            margin-bottom: 20px;
+            display: none; /* Hide all sections initially */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            background-color: #3498db; /* Accent color, adjust as needed */
+            color: #ecf0f1; /* Text color for better readability */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sridhar's Blog</h1>
+    </header>
+
+    <section id="aboutMe" style="display: block;">
+        <h2>About Me</h2>
+        <p> I am Sridhar A, currently pursuing my Bachelor's degree in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at Mallareddy College Of Engineering and Technology. I am passionate about leveraging cutting-edge technologies to address complex challenges and contribute to the evolving landscape of artificial intelligence.
+            I am deeply committed to continuous learning and staying abreast of the latest advancements in AI and ML. Alongside my academic pursuits, I actively seek opportunities to apply my skills in real-world scenarios and collaborate with like-minded individuals to explore the limitless possibilities of technology.
+            I am excited about the prospect of contributing my skills and knowledge to the ever-evolving field of AI and ML, and I look forward to exploring new avenues for growth and innovation in the future.</p>
+        <button onclick="showSection('contactDetails')">></button>
+    </section>
+
+    <section id="contactDetails">
+        <h2>Contact Details</h2>
+        <ul>
+            <li>
+                <img src="https://t3.ftcdn.net/jpg/03/86/50/54/360_F_386505487_omkU0kGEhMa3gQ83rVksoXX41AFFfi0K.jpg" alt="Email Icon">
+                : <a href="mailto:sridharrao1706@gmail.com">sridharrao1706@gmail.com</a>
+                <a href="https://mail.google.com/" target="_blank" title="Gmail Login">
+                    <i class="fas fa-at icon" style="margin-left: 5px;"></i>
+                </a>
+            </li>
+            <li>
+                <img src="https://t4.ftcdn.net/jpg/06/11/74/07/360_F_611740703_KfUasUn9r0hx0xOiHhpZVdgHtOZqErDC.jpg" alt="Phone Icon">
+                : (+91)9908652621
+            </li>
+            <li>
+                <img src="https://t4.ftcdn.net/jpg/05/46/78/23/360_F_546782398_26V3pL84dJYL7ovgIIIjcDJ7IhPUDxSA.jpg" alt="LinkedIn Icon">
+                : <a href="https://www.linkedin.com/in/Sridhar A" target="_blank">linkedin.com/in/Sridhar A</a>
+            </li>
+            <li>
+                <img src="https://t3.ftcdn.net/jpg/05/25/22/64/360_F_525226448_tMAcFbGCTq17YQp0Jfmn8d54IBkEuNbs.jpg" alt="Location Icon">
+                : Hyderabad, India
+            </li>
+        </ul>
+        <button onclick="showSection('technicalSkills')">></button>
+    </section>
+
+    <section id="technicalSkills">
+        <h2>Technical Skills</h2>
+         <div class="progress-container">
+            <div class="progress-bar">
+                <p>HTML5</p>
+                <progress max="100" value="70"></progress>
+            </div>
+            <div class="progress-bar">
+                <p>CSS3</p>
+                <progress max="100" value="80"></progress>
+            </div>
+            <div class="progress-bar">
+                <p>JavaScript</p>
+                <progress max="100" value="60"></progress>
+            </div>
+        </div>
+        <button onclick="showSection('projects')">></button>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <h3>City Compass</h3>
+        <p>City Compass-The Ultimate Urban Guide, web application stands as an innovative solution, redefining the urban experience for residents and visitors alike. With a commitment to enhancing accessibility and enjoyment, the platform offers real-time information, personalized recommendations, and interactive features to navigate and explore cities efficiently. Multilingual support ensures inclusivity, catering to both locals and tourists. The application encompasses diverse features, including language selection, a detailed showcase of attractions, insights into city events, and an extensive collection of restaurants with integrated Google functionality. The inclusion of tours, complete with information on activities and packing lists, adds experiential depth. The contact feature enables users to contribute their details, fostering community engagement by storing the data securely.  Notably, the project prioritizes safety with an emergency numbers feature, offering essential contacts. Developed using MySQL for robust database connectivity and the NetBeans IDE 18 with JDK and JSP Servlets, this project signifies a comprehensive approach to transforming urban engagement into a sustainable, accessible, and enjoyable endeavor.
+</p>
+
+    </section>
+
+    <script>
+        var currentSectionIndex = 0; // Keep track of the current section index
+
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+
+            // Display the current section
+            sections[currentSectionIndex].style.display = 'block';
+
+            // Move to the next section or loop back to the first section
+            currentSectionIndex = (currentSectionIndex + 1) % sections.length;
+
+            // Display the next section under the previous one
+            sections[currentSectionIndex].style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
